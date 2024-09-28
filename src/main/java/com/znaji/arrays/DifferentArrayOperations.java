@@ -4,7 +4,9 @@ public class DifferentArrayOperations {
 
         public static void main(String[] args) {
             int[] arr = new int[] {1,2,3,4,5,6,7,8,9,10};
-            System.out.println(findMax(arr));
+            int[] arr2 = new int[] {5, 10, 15, 20, 25, 30, 35, 40, 45, 50};
+            int[] arr3 = new int[] {13, 34, 33,1};
+            System.out.println(findSecondMax(arr3));
         }
 
         public static void printArray(int[] arr) {
@@ -51,5 +53,19 @@ public class DifferentArrayOperations {
                 }
             }
             return max;
+        }
+
+        public static int findSecondMax(int[] arr) {
+            int[] max = new int[2];
+            max[0] = arr[0];
+            for (int i = 1; i < arr.length; i++) {
+                if (arr[i] > max[0]){
+                    max[1] = max[0];
+                    max[0] = arr[i];
+                } else if (arr[i] > max[1] && arr[i] != max[0]) {
+                    max[1] = arr[i];
+                }
+            }
+            return max[1];
         }
 }
