@@ -4,8 +4,7 @@ public class DifferentArrayOperations {
 
         public static void main(String[] args) {
             int[] arr = new int[] {1,2,3,4,5,6,7,8,9,10};
-            reverseArray(arr);
-            printArray(arr);
+            System.out.println(findMax(arr));
         }
 
         public static void printArray(int[] arr) {
@@ -42,5 +41,15 @@ public class DifferentArrayOperations {
                 start++;
                 end--;
             }
+        }
+
+        public static int findMax(int[] arr) {
+            int max = arr[0];
+            for (int i = 1; i < arr.length; i++) {
+                if (arr[i] > max) {
+                    max = arr[i];
+                }
+            }
+            return max;
         }
 }
