@@ -4,7 +4,8 @@ public class DifferentArrayOperations {
 
         public static void main(String[] args) {
             int[] arr = new int[] {1,2,3,4,5,6,7,8,9,10};
-            printArray(removeEvenNumbers(arr));
+            reverseArray(arr);
+            printArray(arr);
         }
 
         public static void printArray(int[] arr) {
@@ -29,5 +30,17 @@ public class DifferentArrayOperations {
                 }
             }
             return oddArr;
+        }
+
+        public static void reverseArray(int[] arr) {
+            int start = 0;
+            int end = arr.length - 1;
+            while (start < end) {
+                int temp = arr[start];
+                arr[start] = arr[end];
+                arr[end] = temp;
+                start++;
+                end--;
+            }
         }
 }
