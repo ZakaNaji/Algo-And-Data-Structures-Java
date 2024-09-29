@@ -31,6 +31,14 @@ public class MyArray <T>{
         return popped;
     }
 
+    public void shift(int index) {
+        for (int i = index; i < length-1; i++) {
+            data[i] = data[i+1];
+        }
+        data[length-1] = null;
+        length --;
+    }
+
     public T get(int index) {
         return data[index];
     }
