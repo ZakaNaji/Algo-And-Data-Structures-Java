@@ -10,8 +10,7 @@ public class Main {
         System.out.println(myArray);
         myArray.push("world");
         System.out.println(myArray);
-        myArray.shift(0);
-
+        myArray.delete(0);
         System.out.println(myArray);
     }
 }

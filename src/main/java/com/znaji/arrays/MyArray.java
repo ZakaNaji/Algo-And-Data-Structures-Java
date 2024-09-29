@@ -39,6 +39,12 @@ public class MyArray <T>{
         length --;
     }
 
+    public T delete(int index) {
+        T deleted = data[index];
+        shift(index);
+        return deleted;
+    }
+
     public T get(int index) {
         return data[index];
     }
