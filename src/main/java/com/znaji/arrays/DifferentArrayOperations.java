@@ -5,9 +5,8 @@ import java.util.Arrays;
 public class DifferentArrayOperations {
 
         public static void main(String[] args) {
-            int[] arr = new int[] {0,1,0,4,12};
-            moveAllZerosToTheEnd(arr);
-            printArray(arr);
+            int[] arr = new int[] {1,3,2,5,4,8,6};
+            System.out.println(findMissingNumber(arr));
         }
 
         public static void printArray(int[] arr) {
@@ -82,5 +81,16 @@ public class DifferentArrayOperations {
                     zeroIndex++;
                 }
             }
+        }
+
+        //suppose we have an array of (n-1) distinct element, find the missing element, knowing the range is from 1-n
+        public static int findMissingNumber(int[] arr) {
+            //will use the mathematical formula 1+2+...+n = n*(n+1)/2
+            int sum = 0;
+            int n = arr.length + 1;
+            for (int i = 0; i < arr.length; i++) {
+                sum += arr[i];
+            }
+            return (n*(n+1)/2) - sum;
         }
 }
