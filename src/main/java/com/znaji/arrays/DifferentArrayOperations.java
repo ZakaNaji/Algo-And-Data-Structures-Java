@@ -1,12 +1,12 @@
 package com.znaji.arrays;
 
+import java.util.Arrays;
+
 public class DifferentArrayOperations {
 
         public static void main(String[] args) {
-            int[] arr = new int[] {1,2,3,4,5,6,7,8,9,10};
-            int[] arr2 = new int[] {5, 10, 15, 20, 25, 30, 35, 40, 45, 50};
-            int[] arr3 = new int[] {13, 34, 33,1};
-            System.out.println(findSecondMax(arr3));
+            int[] arr = new int[] {0,1,0,4,12};
+            System.out.println(Arrays.toString(moveAllZerosToTheEnd(arr)));
         }
 
         public static void printArray(int[] arr) {
@@ -67,5 +67,19 @@ public class DifferentArrayOperations {
                 }
             }
             return max[1];
+        }
+
+        public static int[] moveAllZerosToTheEnd(int[] arr) {
+            int length = arr.length;
+            int[] newArr = new int[length];
+            int numberOfZeros = 0;
+            for (int i=0; i <length; i++) {
+                if (arr[i] == 0) {
+                    numberOfZeros++;
+                    continue;
+                }
+                newArr[i - numberOfZeros] = arr[i];
+            }
+            return newArr;
         }
 }
