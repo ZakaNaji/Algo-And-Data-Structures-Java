@@ -12,5 +12,9 @@ public class Main {
         System.out.println(myArray);
         System.out.println(myArray.get(0));
         System.out.println(myArray.get(1));
+        myArray.pop();
+        System.out.println(myArray);
+        myArray.pop();
+        System.out.println(myArray);
     }
 }

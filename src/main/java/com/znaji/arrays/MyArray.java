@@ -23,6 +23,14 @@ public class MyArray <T>{
         length++;
     }
 
+    public T pop() {
+        if (length == 0) return null;
+        T popped = data[length - 1];
+        data[length - 1] = null;
+        length--;
+        return popped;
+    }
+
     public T get(int index) {
         return data[index];
     }
