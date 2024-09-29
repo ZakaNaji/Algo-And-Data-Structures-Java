@@ -6,7 +6,8 @@ public class DifferentArrayOperations {
 
         public static void main(String[] args) {
             int[] arr = new int[] {0,1,0,4,12};
-            System.out.println(Arrays.toString(moveAllZerosToTheEnd(arr)));
+            moveAllZerosToTheEnd(arr);
+            printArray(arr);
         }
 
         public static void printArray(int[] arr) {
@@ -69,17 +70,17 @@ public class DifferentArrayOperations {
             return max[1];
         }
 
-        public static int[] moveAllZerosToTheEnd(int[] arr) {
-            int length = arr.length;
-            int[] newArr = new int[length];
-            int numberOfZeros = 0;
-            for (int i=0; i <length; i++) {
-                if (arr[i] == 0) {
-                    numberOfZeros++;
-                    continue;
+        public static void moveAllZerosToTheEnd(int[] arr) {
+            int zeroIndex = 0;
+            for (int i = 0; i < arr.length; i++) {
+                if(arr[i] !=0 && arr[zeroIndex] == 0) {
+                    int temp = arr[i];
+                    arr[i] = arr[zeroIndex];
+                    arr[zeroIndex] = temp;
                 }
-                newArr[i - numberOfZeros] = arr[i];
+                if(arr[zeroIndex] != 0) {
+                    zeroIndex++;
+                }
             }
-            return newArr;
         }
 }
