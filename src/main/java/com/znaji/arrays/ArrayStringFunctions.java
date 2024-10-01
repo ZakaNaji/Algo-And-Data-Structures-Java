@@ -11,4 +11,18 @@ public class ArrayStringFunctions {
         }
         return true;
     }
+
+    public static String reverse(String str) {
+        char[] strArray = str.toCharArray();
+        int start = 0;
+        int end = strArray.length - 1;
+        while (start < end) {
+            char temp = strArray[start];
+            strArray[start] = strArray[end];
+            strArray[end] = temp;
+            start++;
+            end--;
+        }
+        return new String(strArray);
+    }
 }
