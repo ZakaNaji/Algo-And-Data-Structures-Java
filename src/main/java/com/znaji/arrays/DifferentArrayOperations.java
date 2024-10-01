@@ -93,4 +93,20 @@ public class DifferentArrayOperations {
             }
             return (n*(n+1)/2) - sum;
         }
+
+        public static int[] mergeSortedArrays(int[] arr1, int[] arr2) {
+            int[] mergedArray = new int[arr1.length + arr2.length];
+            int i1 = 0;
+            int i2 = 0;
+            for (int j = 0; j < mergedArray.length; j++) {
+                if (i1 != arr1.length && (i2 == arr2.length || arr1[i1] < arr2[i2])) {
+                    mergedArray[j] = arr1[i1];
+                    i1++;
+                } else {
+                    mergedArray[j] = arr2[i2];
+                    i2++;
+                }
+            }
+            return mergedArray;
+        }
 }
