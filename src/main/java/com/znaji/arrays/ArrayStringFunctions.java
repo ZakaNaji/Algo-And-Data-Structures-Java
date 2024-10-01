@@ -25,4 +25,9 @@ public class ArrayStringFunctions {
         }
         return new String(strArray);
     }
+
+    public static String reverseRecursive(String str) {
+        if (str.isEmpty()) return "";
+        return reverse(str.substring(1)) + str.charAt(0);
+    }
 }
