@@ -47,11 +47,17 @@ function moveAllZerosToEnd(arr) {
   }
 }
 
+function findMissingNumber(arr) {
+  let n = arr.length + 1;
+  let sum = (n * (n + 1)) / 2;
+  for (let i = 0; i < arr.length; i++) {
+    sum -= arr[i];
+  }
+  return sum;
+}
 function main() {
-  let arr = [0, 2, 1, 0, 0, 3];
-  let arr1 = [1, 2, 1, 0, 0, 3, 0, 3];
-  moveAllZerosToEnd(arr);
-  console.log(arr);
+  let arr = [1, 3, 2, 5, 8, 7, 6];
+  console.log(findMissingNumber(arr));
 }
 
 main();
