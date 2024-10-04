@@ -55,9 +55,29 @@ function findMissingNumber(arr) {
   }
   return sum;
 }
+
+function mergeSortedArrays(arr1, arr2) {
+  let merged = [];
+  let length = arr1.length + arr2.length;
+  let i = 0,
+    j = 0,
+    k = 0;
+  while (i < length) {
+    if (j < arr1.length && (k === arr2.length || arr1[j] < arr2[k])) {
+      merged.push(arr1[j]);
+      j++;
+    } else {
+      merged.push(arr2[k]);
+      k++;
+    }
+    i++;
+  }
+  return merged;
+}
 function main() {
-  let arr = [1, 3, 2, 5, 8, 7, 6];
-  console.log(findMissingNumber(arr));
+  let arr1 = [1, 3, 6, 7];
+  let arr2 = [2, 4, 5];
+  console.log(mergeSortedArrays(arr2, arr1));
 }
 
 main();
