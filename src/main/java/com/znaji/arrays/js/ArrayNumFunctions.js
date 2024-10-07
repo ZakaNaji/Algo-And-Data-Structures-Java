@@ -74,10 +74,22 @@ function mergeSortedArrays(arr1, arr2) {
   }
   return merged;
 }
+
+function arrayHasPairWithSum(arr, target) {
+  let mapOfComplements = {};
+  for (let i = 0; i < arr.length; i++) {
+    let complement = target - arr[i];
+    if (mapOfComplements[arr[i]]) {
+      return `Yes array has a pair of complements: ${complement} and ${arr[i]}`;
+    }
+    mapOfComplements[complement] = true;
+  }
+  return "NO pair with complements";
+}
+
 function main() {
   let arr1 = [1, 3, 6, 7];
-  let arr2 = [2, 4, 5];
-  console.log(mergeSortedArrays(arr2, arr1));
+  console.log(arrayHasPairWithSum(arr1, 11));
 }
 
 main();
