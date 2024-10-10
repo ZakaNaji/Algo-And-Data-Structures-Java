@@ -37,14 +37,20 @@ class MyLinkedList {
     this.length--;
     return this;
   }
+
+  prepend(value) {
+    let newNode = {
+      value: value,
+      next: null,
+    };
+    newNode.next = this.head;
+    this.head = newNode;
+    this.length++;
+    return this;
+  }
 }
 
 const myLinkedList = new MyLinkedList(1);
 myLinkedList.append(2);
 myLinkedList.append(3);
-myLinkedList.pop();
-console.log(myLinkedList);
-myLinkedList.pop();
-console.log(myLinkedList);
-myLinkedList.pop();
-console.log(myLinkedList);
+console.log(myLinkedList.prepend(0));
