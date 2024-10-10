@@ -16,6 +16,7 @@ class MyLinkedList {
     this.tail.next = newNode;
     this.tail = newNode;
     this.length++;
+    return this;
   }
 
   pop() {
@@ -23,7 +24,7 @@ class MyLinkedList {
       this.head = null;
       this.tail = null;
       this.length = 0;
-      return;
+      return this;
     }
     let node = this.head;
     console.log(node);
@@ -34,6 +35,7 @@ class MyLinkedList {
     node.next = null;
     this.tail = node;
     this.length--;
+    return this;
   }
 }
 
