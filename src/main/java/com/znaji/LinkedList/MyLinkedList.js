@@ -57,12 +57,47 @@ class MyLinkedList {
       return this.append(value);
     }
 
-    let newNode = new Node(value);
-    let prevNode = this.traverse(index - 1);
-    let currentNode = prevNode.next;
+    const newNode = new Node(value);
+    const prevNode = this.traverse(index - 1);
+    const currentNode = prevNode.next;
     newNode.next = currentNode;
     prevNode.next = newNode;
     this.length++;
+    return this;
+  }
+
+  removeHead() {
+    const currentNode = this.head;
+    this.head = currentNode.next;
+    currentNode.next = null;
+    this.length--;
+
+    if (this.length === 0) {
+      this.tail = null;
+    }
+
+    return this;
+  }
+
+  remove(index) {
+    if (index >= this.length) {
+      throw new Error("index out of bound");
+    }
+
+    if (index === 0) {
+      return this.removeHead();
+    }
+
+    const prevNode = this.traverse(index - 1);
+    const currentNode = prevNode.next;
+    prevNode.next = currentNode.next;
+    currentNode.next = null;
+    this.length--;
+
+    if (index === this.length) {
+      this.tail = prevNode;
+    }
+
     return this;
   }
 
@@ -90,7 +125,9 @@ class MyLinkedList {
 const myLinkedList = new MyLinkedList(1);
 myLinkedList.append(2);
 myLinkedList.append(3);
-myLinkedList.insert(0, 0); // Insert at the head
-myLinkedList.insert(2, 1.5); // Insert in the middle
-myLinkedList.insert(5, 4); // Insert at the tail
+myLinkedList.insert(0, 0);
+myLinkedList.printList();
+myLinkedList.removeHead();
+myLinkedList.printList();
+myLinkedList.remove(1);
 myLinkedList.printList();
