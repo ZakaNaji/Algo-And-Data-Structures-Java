@@ -113,12 +113,13 @@ class MyLinkedList {
 
   printList() {
     let node = this.head;
-    console.log("{");
+    let output = "LinkedList: ";
     while (node !== null) {
-      console.log(node.value + " --> ");
+      output += `${node.value} -> `;
       node = node.next;
     }
-    console.log("}");
+    output += "null";
+    console.log(output);
   }
 }
 
