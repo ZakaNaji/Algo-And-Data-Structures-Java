@@ -12,6 +12,22 @@ public class MyLinkedList {
         length = 1;
     }
 
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("MyLinkedList{");
+        Node current = head;
+        while (current != null) {
+            sb.append(current.value);
+            if (current.next != null) {
+                sb.append(" -> ");
+            }
+            current = current.next;
+        }
+        sb.append(", length=").append(length).append('}');
+        return sb.toString();
+    }
+
     public static class Node {
         private int value;
         private Node next;
