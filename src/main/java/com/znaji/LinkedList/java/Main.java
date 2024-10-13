@@ -9,6 +9,8 @@ public class Main {
         myLL.pop();
         myLL.pop();
         myLL.pop();
+        myLL.prepend(0);
+        myLL.prepend(1);
         System.out.println(myLL);
     }
 }

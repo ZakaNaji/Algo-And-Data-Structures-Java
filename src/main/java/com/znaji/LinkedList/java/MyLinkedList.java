@@ -25,6 +25,16 @@ public class MyLinkedList {
         length++;
     }
 
+    public void prepend(int value) {
+        final Node node = new Node(value);
+        node.next = head;
+        head = node;
+        length ++;
+        if (length == 1) {
+            tail = head;
+        }
+    }
+
     public void pop() {
         if (length == 0) {
             return;
