@@ -35,6 +35,17 @@ public class MyLinkedList {
         }
     }
 
+    public void unshift() {
+        if (length == 0) {
+            return;
+        }
+        head = head.next;
+        length--;
+        if (length == 0 ) {
+            tail = null;
+        }
+    }
+
     public void pop() {
         if (length == 0) {
             return;
