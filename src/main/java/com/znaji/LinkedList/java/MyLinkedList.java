@@ -67,7 +67,7 @@ public class MyLinkedList {
     }
 
     public Node get(int index) {
-        if (index < 0 || index >= length) throw new IndexOutOfBoundsException("index out of bound!");
+        if (index < 0 || index >= length) return null;
 
         Node node = head;
         int i = 0;
@@ -96,6 +96,15 @@ public class MyLinkedList {
             newNode.next = prevNode.next;
             prevNode.next = newNode;
             length++;
+            return true;
+        }
+        return false;
+    }
+
+    public boolean set(int index, int value) {
+        Node temp = get(index);
+        if (temp != null) {
+            temp.value = value;
             return true;
         }
         return false;
