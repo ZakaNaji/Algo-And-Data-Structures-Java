@@ -67,7 +67,7 @@ public class MyLinkedList {
     }
 
     public Node get(int index) {
-        if (index >= length) throw new IndexOutOfBoundsException("index out of bound!");
+        if (index < 0 || index >= length) throw new IndexOutOfBoundsException("index out of bound!");
 
         Node node = head;
         int i = 0;
@@ -76,6 +76,29 @@ public class MyLinkedList {
             i++;
         }
         return node;
+    }
+
+    public boolean insertAt(int index, int value) {
+        if (index < 0) return false;
+        if (index == 0) {
+            prepend(value);
+            return true;
+        }
+
+        if (index >= length) {
+            append(value);
+            return true;
+        }
+
+        Node newNode = new Node(value);
+        Node prevNode = get(index - 1);
+        if (prevNode != null) {
+            newNode.next = prevNode.next;
+            prevNode.next = newNode;
+            length++;
+            return true;
+        }
+        return false;
     }
 
     @Override
