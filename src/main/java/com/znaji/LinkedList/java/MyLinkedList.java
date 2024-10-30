@@ -66,6 +66,18 @@ public class MyLinkedList {
         }
     }
 
+    public Node get(int index) {
+        if (index >= length) throw new IndexOutOfBoundsException("index out of bound!");
+
+        Node node = head;
+        int i = 0;
+        while (i < index) {
+            node = node.next;
+            i++;
+        }
+        return node;
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -88,6 +100,13 @@ public class MyLinkedList {
 
         Node(int value) {
             this.value = value;
+        }
+
+        @Override
+        public String toString() {
+            return "Node{" +
+                    "value=" + value +
+                    '}';
         }
     }
 }
