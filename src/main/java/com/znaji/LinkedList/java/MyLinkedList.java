@@ -129,6 +129,23 @@ public class MyLinkedList {
         return temp;
     }
 
+    public void reverse() {
+        if (length == 0) return;
+
+        Node temp = head;
+        Node after;
+        Node before = null;
+        head = tail;
+        tail = temp;
+
+        for (int i = 0; i < length; i++) {
+            after = temp.next;
+            temp.next = before;
+            before = temp;
+            temp = after;
+        }
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
