@@ -35,20 +35,22 @@ public class MyLinkedList {
         }
     }
 
-    public void unshift() {
+    public Node unshift() {
         if (length == 0) {
-            return;
+            return null;
         }
+        final Node temp = head;
         head = head.next;
         length--;
         if (length == 0 ) {
             tail = null;
         }
+        return temp;
     }
 
-    public void pop() {
+    public Node pop() {
         if (length == 0) {
-            return;
+            return null;
         }
 
         Node currentNode = head;
@@ -64,6 +66,7 @@ public class MyLinkedList {
             head = null;
             tail = null;
         }
+        return currentNode;
     }
 
     public Node get(int index) {
@@ -108,6 +111,22 @@ public class MyLinkedList {
             return true;
         }
         return false;
+    }
+
+    public Node remove(int index) {
+        if(index < 0 || index >= length) return null;
+        if (index == 0) {
+            return unshift();
+        }
+        if (index == length - 1) {
+            return pop();
+        }
+        final Node prevNode = get(index - 1);
+        final Node temp = prevNode.next;
+        prevNode.next = temp.next;
+        temp.next = null;
+        length--;
+        return temp;
     }
 
     @Override

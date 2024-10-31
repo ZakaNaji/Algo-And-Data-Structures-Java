@@ -7,7 +7,7 @@ public class Main {
         myLL.append(2);
         myLL.append(3);
         myLL.append(4);
-        System.out.println(myLL.set(0, 50));
+        System.out.println(myLL.remove(2));
         System.out.println(myLL);
     }
 }
