@@ -7,7 +7,6 @@ public class Main {
         myLL.append(2);
         myLL.append(3);
         myLL.append(4);
-        myLL.reverse();
-        System.out.println(myLL);
+        System.out.println(myLL.findMiddleNode());
     }
 }
