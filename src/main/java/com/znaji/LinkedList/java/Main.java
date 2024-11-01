@@ -7,6 +7,12 @@ public class Main {
         myLL.append(2);
         myLL.append(3);
         myLL.append(4);
-        System.out.println(myLL.findMiddleNode());
+        //create a circle:
+        createPartialLoop(myLL);
+        System.out.println(myLL.hasLoop());
+    }
+
+    public static void createPartialLoop(MyLinkedList list) {
+        list.getHead().next.next.next = list.getHead().next;
     }
 }

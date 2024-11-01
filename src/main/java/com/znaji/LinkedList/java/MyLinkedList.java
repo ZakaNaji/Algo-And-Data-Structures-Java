@@ -156,6 +156,23 @@ public class MyLinkedList {
         return slow;
     }
 
+    public Node getHead() {
+        return head;
+    }
+
+    public boolean hasLoop() {
+        Node slow = head;
+        Node fast = head.next;
+        while (fast != slow) {
+            if (fast == null || fast.next == null) {
+                return false;
+            }
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        return true;
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -174,7 +191,7 @@ public class MyLinkedList {
 
     public static class Node {
         private int value;
-        private Node next;
+        Node next;
 
         Node(int value) {
             this.value = value;
