@@ -12,5 +12,11 @@ public class Main {
         System.out.println(linkedList.removeLast());
         System.out.println(linkedList.removeLast());
         System.out.println(linkedList);
+
+        //prepend test:
+        linkedList.prepend(1);
+        linkedList.prepend(0);
+        linkedList.append(2);
+        System.out.println(linkedList);
     }
 }
