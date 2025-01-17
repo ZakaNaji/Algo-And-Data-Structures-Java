@@ -18,5 +18,10 @@ public class Main {
         linkedList.prepend(0);
         linkedList.append(2);
         System.out.println(linkedList);
+
+        //remove first test:
+        System.out.println("removed value: " + linkedList.removeFirst());
+        System.out.println("removed value: " + linkedList.removeFirst());
+        System.out.println(linkedList);
     }
 }
