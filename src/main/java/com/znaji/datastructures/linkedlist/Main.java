@@ -6,5 +6,11 @@ public class Main {
         linkedList.append(2);
         linkedList.append(3);
         System.out.println(linkedList);
+        //test remove last:
+        System.out.println(linkedList.removeLast());
+        System.out.println(linkedList.removeLast());
+        System.out.println(linkedList.removeLast());
+        System.out.println(linkedList.removeLast());
+        System.out.println(linkedList);
     }
 }

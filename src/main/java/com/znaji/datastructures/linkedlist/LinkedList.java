@@ -25,12 +25,36 @@ public class LinkedList {
         length++;
     }
 
+    public Node removeLast() {
+        if (length == 0) {
+            return null;
+        }
+        Node temp = head;
+        Node pre = head;
+        while (temp.next != null) {
+            pre = temp;
+            temp = temp.next;
+        }
+        tail = pre;
+        tail.next = null;
+        length--;
+        if (length == 0) {
+            tail = null;
+            head = null;
+        }
+        return temp;
+    }
     class Node {
         private int value;
         private Node next;
 
         public Node(int value) {
             this.value = value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
         }
     }
 
