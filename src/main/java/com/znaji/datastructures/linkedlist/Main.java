@@ -6,22 +6,8 @@ public class Main {
         linkedList.append(2);
         linkedList.append(3);
         System.out.println(linkedList);
-        //test remove last:
-        System.out.println(linkedList.removeLast());
-        System.out.println(linkedList.removeLast());
-        System.out.println(linkedList.removeLast());
-        System.out.println(linkedList.removeLast());
-        System.out.println(linkedList);
-
-        //prepend test:
-        linkedList.prepend(1);
-        linkedList.prepend(0);
-        linkedList.append(2);
-        System.out.println(linkedList);
-
-        //remove first test:
-        System.out.println("removed value: " + linkedList.removeFirst());
-        System.out.println("removed value: " + linkedList.removeFirst());
-        System.out.println(linkedList);
+        //test get(index):
+        System.out.println(linkedList.get(3));//null
+        System.out.println(linkedList.get(2));//3
     }
 }

@@ -68,6 +68,16 @@ public class LinkedList {
         return temp;
     }
 
+    public Node get(int index) {
+        if (index < 0 || index >= length) return null;
+        Node temp = head;
+        while (index > 0) {
+            temp = temp.next;
+            index--;
+        }
+        return temp;
+    }
+
     class Node {
         private int value;
         private Node next;
