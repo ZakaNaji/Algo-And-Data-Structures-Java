@@ -85,6 +85,36 @@ public class LinkedList {
         return true;
     }
 
+    public boolean insert(int index, int value) {
+        if (index < 0 || index > length) return false;
+        if (index == 0) {
+            prepend(value);
+            return true;
+        }
+        if (index == length) {
+            append(value);
+            return true;
+        }
+        Node preNode = get(index - 1);
+        Node newNode = new Node(value);
+        newNode.next = preNode.next;
+        preNode.next = newNode;
+        length++;
+        return true;
+    }
+
+    public Node remove(int index) {
+        if (index < 0 || index >= length) return null;
+        if (index == 0) return removeFirst();
+        if (index == length-1) return removeLast();
+        Node preNode = get(index-1);
+        Node temp = preNode.next;
+        preNode.next = temp.next;
+        temp.next = null;
+        length--;
+        return temp;
+    }
+
     class Node {
         private int value;
         private Node next;
