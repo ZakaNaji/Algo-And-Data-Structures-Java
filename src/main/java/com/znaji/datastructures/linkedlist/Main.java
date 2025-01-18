@@ -6,8 +6,11 @@ public class Main {
         linkedList.append(2);
         linkedList.append(3);
         System.out.println(linkedList);
-        //test get(index):
-        System.out.println(linkedList.get(3));//null
-        System.out.println(linkedList.get(2));//3
+        //test set(index, value):
+        System.out.println(linkedList.set(0, 0));
+        System.out.println(linkedList.set(1, 10));
+        System.out.println(linkedList.set(2, 20));
+        System.out.println(linkedList.set(3, 30));
+        System.out.println(linkedList);
     }
 }
