@@ -14,5 +14,15 @@ public class Main {
         System.out.println(linkedList);
         System.out.println(linkedList.remove(4));
         System.out.println(linkedList);
+        linkedList.reverse();
+        System.out.println(linkedList);
+
+        LinkedList linkedList1 = new LinkedList(10);
+        linkedList1.reverse();
+        System.out.println(linkedList1);
+        linkedList1.removeLast();
+        System.out.println(linkedList1);
+        linkedList1.reverse();
+        System.out.println(linkedList1);
     }
 }
