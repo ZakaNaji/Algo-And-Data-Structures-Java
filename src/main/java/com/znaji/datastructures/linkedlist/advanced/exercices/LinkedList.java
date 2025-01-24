@@ -32,6 +32,17 @@ public class LinkedList {
         return slow;
     }
 
+    public boolean hasLoop() {
+        Node fast = head;
+        Node slow = head;
+        while (fast != null && fast.next != null) {
+            fast = fast.next.next;
+            slow = slow.next;
+            if (fast == slow) return true;
+        }
+        return false;
+    }
+
     class Node {
         private int value;
         private Node next;
