@@ -9,6 +9,6 @@ public class AdvancedExercicesMain {
         ll.append(4);
         ll.append(5);
 
-        System.out.println(ll.findMiddleNode());
+        System.out.println(ll.findKthFromEnd(7));
     }
 }
