@@ -1,5 +1,8 @@
 package com.znaji.datastructures.linkedlist.advanced.exercices;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class LinkedList {
 
     private Node head;
@@ -83,6 +86,24 @@ public class LinkedList {
         p1.next = d2.next;
         p2.next = null;
         tail = p2;
+    }
+
+    public void removeDuplicates() {
+        if (head == null) return;
+
+        final Set<Integer> elements = new HashSet<>();
+        Node current = head;
+        Node prev = head;
+        while (current != null) {
+            if (elements.contains(current.value)) {
+                current = current.next;
+                prev.next = current;
+            } else {
+                elements.add(current.value);
+                prev = current;
+                current = current.next;
+            }
+        }
     }
 
     class Node {
