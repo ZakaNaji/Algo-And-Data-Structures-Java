@@ -59,6 +59,32 @@ public class LinkedList {
         return slow;
     }
 
+    public void partitionList(int x) {
+        if (head == null) return;
+
+        Node d1 = new Node(0);
+        Node d2 = new Node(0);
+
+        Node p1 = d1;
+        Node p2 = d2;
+
+        Node current = head;
+        while (current != null) {
+            if (current.value < x) {
+                p1.next = current;
+                p1 = current;
+            } else {
+                p2.next = current;
+                p2 = current;
+            }
+            current = current.next;
+        }
+        head = d1.next;
+        p1.next = d2.next;
+        p2.next = null;
+        tail = p2;
+    }
+
     class Node {
         private int value;
         private Node next;
