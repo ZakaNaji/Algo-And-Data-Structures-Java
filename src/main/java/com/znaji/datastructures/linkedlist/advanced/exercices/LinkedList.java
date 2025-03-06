@@ -106,6 +106,17 @@ public class LinkedList {
         }
     }
 
+    public int binaryToDecimal() {
+        int num = 0;
+        Node currentNode = head;
+        while(currentNode != null) {
+            num = num*2 + currentNode.value;
+            currentNode = currentNode.next;
+        }
+
+        return num;
+    }
+
     class Node {
         private int value;
         private Node next;
