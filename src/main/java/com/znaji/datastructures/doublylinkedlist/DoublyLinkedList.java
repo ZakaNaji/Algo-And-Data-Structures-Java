@@ -26,6 +26,21 @@ public class DoublyLinkedList {
         length++;
     }
 
+    public Node removeLast() {
+        if (length == 0) return null;
+        Node remove = tail;
+        if (length ==1) {
+            head = null;
+            tail = null;
+        } else {
+            tail = tail.prev;
+            tail.next = null;
+            remove.prev = null;
+        }
+        length--;
+        return remove;
+    }
+
     class Node {
         private int value;
         private Node next;

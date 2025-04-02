@@ -6,6 +6,10 @@ public class Main {
 
         dll.append(2);
 
+        dll.removeLast();
+        dll.removeLast();
+        dll.removeLast();
+
         System.out.println(dll);
     }
 }
