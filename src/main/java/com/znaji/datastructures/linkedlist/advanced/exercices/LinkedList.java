@@ -117,6 +117,37 @@ public class LinkedList {
         return num;
     }
 
+
+    public Node get(int index) {
+        Node temp = head;
+        while (index > 0) {
+            temp = temp.next;
+            index--;
+        }
+        return temp;
+    }
+    public void reverseBetween(int m, int n) {
+        if (head == null) return;
+
+        Node dummy = new Node(0);
+        dummy.next = head;
+        Node prev = dummy;
+
+        for (int i = 0; i <m; i++) {
+            prev = prev.next;
+        }
+        Node start = prev.next;
+        Node then = start.next;
+
+        for (int i = 0; i < n - m; i++) {
+            start.next = then.next;
+            then.next = prev.next;
+            prev.next = then;
+            then = start.next;
+        }
+        head = dummy.next;
+    }
+
     class Node {
         private int value;
         private Node next;
