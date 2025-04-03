@@ -5,9 +5,12 @@ public class Main {
         DoublyLinkedList dll = new DoublyLinkedList(1);
         dll.append(2);
         dll.append(3);
-        dll.insert(1, 99); // should be: 1 <-> 99 <-> 2 <-> 3
-        dll.insert(0, 0);  // should be: 0 <-> 1 <-> ...
-        dll.insert(5, 4);  // should append at end: ... <-> 4
-        System.out.println(dll);
+        dll.append(4);
+        dll.append(5);
+
+        System.out.println("Before: " + dll);
+        DoublyLinkedList.Node removed = dll.remove(2); // should remove 3
+        System.out.println("Removed: " + removed.getValue());
+        System.out.println("After: " + dll);
     }
 }
