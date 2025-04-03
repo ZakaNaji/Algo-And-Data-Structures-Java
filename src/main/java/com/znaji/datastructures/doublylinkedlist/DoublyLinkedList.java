@@ -54,6 +54,21 @@ public class DoublyLinkedList {
         length++;
     }
 
+    public Node removeFirst() {
+        if (length == 0) return null;
+        Node removedNode = head;
+        if (length == 1) {
+            head = null;
+            tail = null;
+        } else {
+            head = removedNode.next;
+            removedNode.next = null;
+            head.prev = null;
+        }
+        length--;
+        return removedNode;
+    }
+
     class Node {
         private int value;
         private Node next;
@@ -61,6 +76,10 @@ public class DoublyLinkedList {
 
         public Node(int value) {
             this.value = value;
+        }
+
+        public int getValue() {
+            return value;
         }
     }
 
