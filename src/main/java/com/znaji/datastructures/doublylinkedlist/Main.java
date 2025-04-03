@@ -5,12 +5,10 @@ public class Main {
         DoublyLinkedList dll = new DoublyLinkedList(10);
         dll.append(20);
         dll.append(30);
-        dll.append(40);
-        dll.append(50);
 
-        System.out.println(dll.get(0).getValue()); // 10
-        System.out.println(dll.get(2).getValue()); // 30
-        System.out.println(dll.get(4).getValue()); // 50
-        System.out.println(dll.get(5));       // null (out of bounds)
+        System.out.println(dll.set(1, 99)); // true
+        System.out.println(dll.get(1).getValue()); // 99
+
+        System.out.println(dll.set(5, 100)); // false (index out of bounds)
     }
 }

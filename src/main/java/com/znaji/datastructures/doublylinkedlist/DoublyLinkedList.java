@@ -86,6 +86,15 @@ public class DoublyLinkedList {
         return temp;
     }
 
+    public boolean set(int index, int value) {
+        Node changedNode = get(index);
+        if (changedNode != null) {
+            changedNode.value = value;
+            return true;
+        }
+        return false;
+    }
+
     class Node {
         private int value;
         private Node next;
