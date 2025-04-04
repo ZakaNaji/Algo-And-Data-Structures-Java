@@ -9,8 +9,7 @@ public class Main {
         dll.append(5);
 
         System.out.println("Before: " + dll);
-        DoublyLinkedList.Node removed = dll.remove(2); // should remove 3
-        System.out.println("Removed: " + removed.getValue());
+        dll.swapFirstLast();
         System.out.println("After: " + dll);
     }
 }
