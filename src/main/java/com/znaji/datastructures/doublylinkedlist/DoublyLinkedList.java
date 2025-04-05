@@ -137,6 +137,23 @@ public class DoublyLinkedList {
         head.value = tail.value;
         tail.value = temp;
     }
+
+    public void reverse() {
+        Node current = head;
+        Node temp = null;
+
+        while (current != null) {
+            temp = current.next;
+            current.next = current.prev;
+            current.prev = temp;
+
+            current = current.prev;
+        }
+
+        temp = head;
+        head = tail;
+        tail = temp;
+    }
     class Node {
         private int value;
         private Node next;

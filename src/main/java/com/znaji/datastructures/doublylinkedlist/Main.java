@@ -9,7 +9,7 @@ public class Main {
         dll.append(5);
 
         System.out.println("Before: " + dll);
-        dll.swapFirstLast();
+        dll.reverse();
         System.out.println("After: " + dll);
     }
 }
