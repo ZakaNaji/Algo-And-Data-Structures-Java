@@ -5,11 +5,9 @@ public class Main {
         DoublyLinkedList dll = new DoublyLinkedList(1);
         dll.append(2);
         dll.append(3);
-        dll.append(4);
-        dll.append(5);
+        dll.append(2);
+        dll.append(1);
 
-        System.out.println("Before: " + dll);
-        dll.reverse();
-        System.out.println("After: " + dll);
+        System.out.println(dll.isPalindrome());
     }
 }

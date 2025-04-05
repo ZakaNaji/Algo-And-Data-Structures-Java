@@ -154,6 +154,17 @@ public class DoublyLinkedList {
         head = tail;
         tail = temp;
     }
+
+    public boolean isPalindrome() {
+        Node start = head;
+        Node finish = tail;
+        for (int i = 0; i < length/2; i++) {
+            if (start.value != finish.value) return false;
+            start = start.next;
+            finish = finish.prev;
+        }
+        return true;
+    }
     class Node {
         private int value;
         private Node next;
