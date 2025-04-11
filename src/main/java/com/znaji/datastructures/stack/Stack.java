@@ -18,6 +18,16 @@ public class Stack {
         length++;
     }
 
+    public Node pop() {
+        if (length ==0) return null;
+
+        Node temp = top;
+        top = top.next;
+        temp.next = null;
+
+        length--;
+        return temp;
+    }
     class Node {
         int value;
         Node next;

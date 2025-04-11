@@ -5,6 +5,8 @@ public class Main {
         Stack stack = new Stack(10);
         stack.push(20);
         stack.push(30);
+
+        System.out.println(stack.pop().value);
         System.out.println(stack);
     }
 }
