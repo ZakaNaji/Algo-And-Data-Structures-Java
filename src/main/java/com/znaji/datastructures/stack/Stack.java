@@ -10,6 +10,14 @@ public class Stack {
         top = newNode;
         length = 1;
     }
+
+    public void push(int value) {
+        Node newNode = new Node(value);
+        newNode.next = top;
+        top = newNode;
+        length++;
+    }
+
     class Node {
         int value;
         Node next;
