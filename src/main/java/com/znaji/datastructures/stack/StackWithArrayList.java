@@ -14,6 +14,13 @@ public class StackWithArrayList <T>{
         values.add(value);
     }
 
+    public T pop() {
+        if (values.isEmpty()) return null;
+        T temp = values.get(values.size()-1);
+        values.remove(values.size()-1);
+        return temp;
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
