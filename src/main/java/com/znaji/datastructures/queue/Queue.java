@@ -2,7 +2,6 @@ package com.znaji.datastructures.queue;
 
 public class Queue {
 
-    int value;
     Node first;
     Node last;
     int length;
@@ -24,6 +23,20 @@ public class Queue {
             last = newNode;
         }
         length++;
+    }
+
+    public Node dequeue() {
+        if (length == 0) return null;
+        Node temp = first;
+        if (length == 1) {
+            first = null;
+            last = null;
+        } else {
+            first = first.next;
+            temp.next = null;
+        }
+        length--;
+        return temp;
     }
 
     class Node {
