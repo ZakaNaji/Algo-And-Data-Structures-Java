@@ -21,6 +21,10 @@ public class StackWithArrayList <T>{
         return temp;
     }
 
+    public boolean isEmpty() {
+        return values.isEmpty();
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
