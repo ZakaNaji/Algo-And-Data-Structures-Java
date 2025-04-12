@@ -1,0 +1,29 @@
+package com.znaji.datastructures.stack;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class StackWithArrayList <T>{
+    List<T> values;
+
+    StackWithArrayList() {
+        values = new ArrayList<>();
+    }
+
+    public void push(T value) {
+        values.add(value);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Stack (top → bottom)\n");
+
+        for (int i = values.size() - 1; i >= 0; i--) {
+            sb.append("[ ").append(values.get(i)).append(" ]\n");
+        }
+
+        return sb.toString();
+    }
+
+}
