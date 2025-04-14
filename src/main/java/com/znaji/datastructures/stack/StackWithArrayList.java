@@ -37,4 +37,7 @@ public class StackWithArrayList <T>{
         return sb.toString();
     }
 
+    public T peek() {
+        return values.get(values.size()-1);
+    }
 }

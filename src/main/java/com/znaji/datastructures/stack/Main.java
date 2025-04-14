@@ -2,8 +2,14 @@ package com.znaji.datastructures.stack;
 
 public class Main {
     public static void main(String[] args) {
-        String txt = "(())()";
-        System.out.println(isBalancedParentheses(txt));
+        StackWithArrayList<Integer> stack = new StackWithArrayList<>();
+        stack.push(3);
+        stack.push(2);
+        stack.push(5);
+        stack.push(1);
+        stack.push(4);
+        sortStack(stack);
+        System.out.println(stack);
     }
 
     private static String reverse(String txt) {
@@ -29,5 +35,19 @@ public class Main {
             }
         }
         return stack.isEmpty();
+    }
+
+    public static void sortStack(StackWithArrayList<Integer> stack) {
+        StackWithArrayList<Integer> sortedStack = new StackWithArrayList<>();
+        while (!stack.isEmpty()) {
+            int temp = stack.pop();
+            while (!sortedStack.isEmpty() && sortedStack.peek() > temp) {
+                stack.push(sortedStack.pop());
+            }
+            sortedStack.push(temp);
+        }
+        while (!sortedStack.isEmpty()) {
+            stack.push(sortedStack.pop());
+        }
     }
 }
