@@ -6,7 +6,7 @@ import java.util.List;
 public class StackWithArrayList <T>{
     List<T> values;
 
-    StackWithArrayList() {
+    public StackWithArrayList() {
         values = new ArrayList<>();
     }
 
