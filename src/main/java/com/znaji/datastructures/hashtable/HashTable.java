@@ -37,6 +37,16 @@ public class HashTable {
         }
     }
 
+    public Integer get(String key) {
+        int position = hash(key);
+        Node temp = dataNode[position];
+        while (temp != null) {
+            if (temp.key.equals(key)) return temp.value;
+            temp = temp.next;
+        }
+        return null;
+    }
+
     class Node {
         String key;
         int value;
