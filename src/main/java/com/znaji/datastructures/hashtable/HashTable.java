@@ -17,6 +17,26 @@ public class HashTable {
         return hash;
     }
 
+    public void set(String key, int value) {
+        int position = hash(key);
+        Node temp = dataNode[position];
+        if (temp == null) {
+            dataNode[position] = new Node(key, value);
+        } else {
+            while (true) {
+                if (temp.key.equals(key)) {
+                    temp.value = value;
+                    return;
+                }
+                if (temp.next == null) {
+                    temp.next = new Node(key, value);
+                    return;
+                }
+                temp = temp.next;
+            }
+        }
+    }
+
     class Node {
         String key;
         int value;
