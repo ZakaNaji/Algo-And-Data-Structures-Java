@@ -28,6 +28,18 @@ public class BinarySearchTree {
         return true;
     }
 
+    public boolean contains(int value) {
+        Node temp = root;
+        while (temp != null) {
+            if (temp.value == value) return true;
+            if (value < temp.value) {
+                temp = temp.left;
+            } else {
+                temp = temp.right;
+            }
+        }
+        return false;
+    }
     class Node {
         int value;
         Node right;

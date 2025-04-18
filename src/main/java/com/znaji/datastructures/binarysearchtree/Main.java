@@ -13,5 +13,7 @@ public class Main {
         bst.insert(8);
         bst.insert(6);
         System.out.println(bst);
+
+        System.out.println(bst.contains(100));
     }
 }
