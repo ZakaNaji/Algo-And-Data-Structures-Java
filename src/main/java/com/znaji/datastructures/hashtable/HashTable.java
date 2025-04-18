@@ -8,6 +8,15 @@ public class HashTable {
         this.dataNode = new Node[size];
     }
 
+    private int hash(String key) {
+        int hash = 0;
+        int prime = 31;
+        for (int i = 0; i < key.length(); i++) {
+            hash = (hash * prime + key.charAt(i)) % size;
+        }
+        return hash;
+    }
+
     class Node {
         String key;
         int value;
