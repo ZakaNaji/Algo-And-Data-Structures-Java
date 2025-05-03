@@ -1,5 +1,7 @@
 package com.znaji.datastructures.hashtable;
 
+import java.util.ArrayList;
+
 public class HashTable {
     private int size = 7;
     private Node[] dataNode;
@@ -45,6 +47,18 @@ public class HashTable {
             temp = temp.next;
         }
         return null;
+    }
+
+    public ArrayList<String> getKeys() {
+        ArrayList<String> keys = new ArrayList<>();
+        for (Node node : dataNode) {
+            Node temp = node;
+            while (temp != null) {
+                keys.add(temp.key);
+                temp = temp.next;
+            }
+        }
+        return keys;
     }
 
     class Node {

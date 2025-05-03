@@ -13,6 +13,6 @@ public class Main {
         ht.set("babt", 50);
         ht.set("cockatils", 50);
 
-        System.out.println(ht.get("test"));
+        System.out.println(ht.getKeys());
     }
 }
