@@ -4,9 +4,9 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-        int [] array1 = new int[] {1,2,3,2,2,1,5,4,3};
+        String hello = "a@2ab@2b!";
 
-        System.out.println(findDuplicates2(array1));
+        System.out.println(firstNonRepeatingChar(hello));
 
     }
 
@@ -47,5 +47,16 @@ public class Main {
             }
         });
         return duplicates;
+    }
+
+    public static Character firstNonRepeatingChar(String text) {
+        Map<Character, Integer> nonDuplicates = new HashMap();
+        for (Character c : text.toCharArray()) {
+            nonDuplicates.put(c, nonDuplicates.getOrDefault(c, 0) + 1);
+        }
+        for (Character c : text.toCharArray()) {
+            if (nonDuplicates.get(c) == 1) return c;
+        }
+        return null;
     }
 }
