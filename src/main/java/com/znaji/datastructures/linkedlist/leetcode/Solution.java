@@ -20,6 +20,11 @@ public class Solution {
         return true;
     }
 
+    public void deleteNode(ListNode node) {
+        node.val = node.next.val;
+        node.next = node.next.next;
+    }
+
     private ListNode reverse(ListNode head) {
         ListNode prev = null;
         while (head != null) {
