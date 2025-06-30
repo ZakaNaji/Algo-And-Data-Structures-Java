@@ -25,6 +25,22 @@ public class Solution {
         node.next = node.next.next;
     }
 
+    public ListNode oddEvenList(ListNode head) {
+        if (head == null || head.next == null ) return head;
+        ListNode ode = head;
+        ListNode even = head.next;
+        ListNode evenHead = head.next;
+
+        while (even != null && even.next != null) {
+            ode.next = even.next;
+            ode = ode.next;
+            even.next = ode.next;
+            even = even.next;
+        }
+        ode.next = evenHead;
+        return head;
+    }
+
     private ListNode reverse(ListNode head) {
         ListNode prev = null;
         while (head != null) {
