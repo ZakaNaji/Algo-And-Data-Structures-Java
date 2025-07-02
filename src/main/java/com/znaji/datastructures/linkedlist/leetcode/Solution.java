@@ -52,4 +52,23 @@ public class Solution {
         return prev;
     }
 
+    public ListNode removeElements(ListNode head, int val) {
+        ListNode dummy = new ListNode(0);
+        dummy.next = head;
+        ListNode p = dummy;
+        ListNode current = head;
+        while (current != null) {
+            if (current.val == val) {
+                p.next = current.next;
+                ListNode next = current.next;
+                current.next = null;
+                current = next;
+            } else {
+                p = current;
+                current = current.next;
+            }
+        }
+        return dummy.next;
+    }
+
 }
