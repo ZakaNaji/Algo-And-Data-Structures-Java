@@ -4,9 +4,9 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-        String[] strings = {"eat", "tea", "tan", "ate", "nat", "bat"};
-
-        System.out.println(groupAnagrams(strings));
+        int[] nums = {2, 7, 11, 15};
+        int[] twoSum = twoSum(nums, 26);
+        System.out.println(twoSum[0] + ", " + twoSum[1]);
     }
 
     public static boolean itemsInCommon(int[] array1, int[] array2) {
@@ -86,5 +86,17 @@ public class Main {
             if (!anotherTextOccurrences.get(entry.getKey()).equals(entry.getValue())) return false;
         }
         return true;
+    }
+
+    public static int [] twoSum(int[] nums, int target) {
+        Map<Integer, Integer> complements = new HashMap<>();
+        for (int i = 0; i < nums.length; i++) {
+            int complement = target - nums[i];
+            if (complements.containsKey(complement)) {
+                return new int[] {complements.get(complement), i};
+            }
+            complements.put(nums[i], i);
+        }
+        return new int[0];
     }
 }
