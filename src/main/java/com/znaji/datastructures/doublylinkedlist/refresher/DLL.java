@@ -144,4 +144,12 @@ public class DLL {
         length--;
         return temp;
     }
+
+    public void swapFirstLast() {
+        if (length < 2) return;
+        int tempValue = head.value;
+        head.value = tail.value;
+        tail.value = tempValue;
+
+    }
 }
