@@ -166,4 +166,16 @@ public class DLL {
         head = tail;
         tail = temp;
     }
+
+    public boolean isPalindrome() {
+        if (length <= 1) return true;
+        Node temp1 = head;
+        Node temp2 = tail;
+        for (int i = 0; i < length/2; i++) {
+            if (temp1.value != temp2.value) return false;
+            temp1 = temp1.next;
+            temp2 = temp2.prev;
+        }
+        return true;
+    }
 }
