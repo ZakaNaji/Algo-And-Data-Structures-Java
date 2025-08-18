@@ -9,5 +9,9 @@ public class Solution {
         int [] nums = {0,1,2,3};
         arrayLetCodeExercices.moveZeroes(nums);
         System.out.println(Arrays.toString(nums));
+
+        char[] s = {'a', 'b', 'c', 'd', 'e'};
+        arrayLetCodeExercices.reverseString(s);
+        System.out.println(Arrays.toString(s));
     }
 }
