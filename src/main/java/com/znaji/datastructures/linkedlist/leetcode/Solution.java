@@ -89,36 +89,13 @@ public class Solution {
     }
 
         public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
-            int sizeA = getListSIze(headA);
-            int sizeB = getListSIze(headB);
-            int diff  = sizeA - sizeB;
-            if (diff > 0) {
-                headA = advance(headA, diff);
-            } else {
-                headB = advance(headB, -diff);
+            ListNode a = headA;
+            ListNode b = headB;
+            while (a != b) {
+                a = (a == null)? headB : a.next;
+                b = (b == null)? headA : b.next;
             }
-            while (headA != null) {
-                if (headA == headB) return headA;
-                headA = headA.next;
-                headB = headB.next;
-            }
-            return null;
-        }
-
-        private ListNode advance(ListNode head, int diff) {
-            for (int i = 0; i < diff; i++) {
-                head = head.next;
-            }
-            return head;
-        }
-
-        private int getListSIze(ListNode head) {
-            int size = 0;
-            while (head != null) {
-                size++;
-                head = head.next;
-            }
-            return size;
+            return b;
         }
 
 }
