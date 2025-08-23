@@ -3,12 +3,19 @@ package com.znaji.datastructures.queue;
 public class Leetcode {
     public static void main(String[] args) {
         StackWithArrayList<Integer> stack = new StackWithArrayList<>();
-        stack.push(10);
-        stack.push(20);
-        stack.push(30);
-        System.out.println(stack);
+        String text = "hello";
+        System.out.println(reverse(text));
+    }
 
-        System.out.println(stack.pop());
-        System.out.println(stack);
+    public static String reverse(String text) {
+        var charsStack = new StackWithArrayList<Character>();
+        for (Character c : text.toCharArray()) {
+            charsStack.push(c);
+        }
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < text.length(); i++) {
+            sb.append(charsStack.pop());
+        }
+        return sb.toString();
     }
 }
