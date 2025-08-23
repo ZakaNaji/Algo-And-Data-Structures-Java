@@ -9,6 +9,11 @@ public class StackWithArrayList<T> {
         top.add(value);
     }
 
+    public T pop() {
+        if (top.isEmpty()) return null;
+       return top.removeLast();
+    }
+
     @Override
     public String toString() {
         if (top.size() == 0) return "";

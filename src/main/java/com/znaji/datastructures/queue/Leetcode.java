@@ -7,5 +7,8 @@ public class Leetcode {
         stack.push(20);
         stack.push(30);
         System.out.println(stack);
+
+        System.out.println(stack.pop());
+        System.out.println(stack);
     }
 }
