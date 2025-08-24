@@ -1,12 +1,12 @@
 package com.znaji.datastructures.queue;
 
-import java.util.Arrays;
+import java.util.*;
 
 public class Leetcode {
     public static void main(String[] args) {
-        StackWithArrayList<Integer> stack = new StackWithArrayList<>();
-        String text = "()[]{}";
-        System.out.println(isValid(text));
+        Deque<Character> stack = new ArrayDeque<>();
+        if (stack.isEmpty())
+        stack.pop();
     }
 
     public static String reverse(String text) {
@@ -22,20 +22,18 @@ public class Leetcode {
     }
 
     public static boolean isValid(String text) {
-        if (text == null || text.isBlank() || text.length() % 2 != 0) return false;
+        if (text == null || text.isBlank()) return false;
+        Deque<Character> stack = new ArrayDeque<>();
+        Map<Character, Character> reverse = Map.of(')', '(', '}', '{', ']', '[');
 
-        StackWithArrayList<Character> stack = new StackWithArrayList();
-        char[] array = text.toCharArray();
-        int size = array.length;
-        for (int i = 0; i < size; i++) {
-            char c = array[i];
+        for (char c : text.toCharArray()) {
             if (isOpen(c)) {
                 stack.push(c);
             } else {
-                if (c != reverseChar(stack.pop())) return false;
+                if(stack.isEmpty() || stack.pop() != reverse.get(c)) return false;
             }
         }
-        return true;
+        return stack.isEmpty();
     }
 
     private static boolean isOpen(char c) {
