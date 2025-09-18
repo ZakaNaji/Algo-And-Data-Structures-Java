@@ -37,5 +37,18 @@ public class BST {
             }
         }
     }
+
+    public boolean contains(int value) {
+        Node temp = root;
+        while (temp != null) {
+            if (temp.value == value) return true;
+            if (temp.value> value) {
+                temp = temp.left;
+            } else {
+                temp = temp.right;
+            }
+        }
+        return false;
+    }
 }
 
