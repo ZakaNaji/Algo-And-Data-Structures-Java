@@ -1,5 +1,8 @@
 package com.znaji.datastructures.hashtable;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class HT {
     int size = 7;
     Node[] buckets = new Node[7];
@@ -47,6 +50,17 @@ public class HT {
             node = node.next;
         }
         return null;
+    }
+
+    public List<String> keys() {
+        List<String> keys = new ArrayList<>();
+        for (Node node : buckets) {
+            while (node != null) {
+                keys.add(node.key);
+                node = node.next;
+            }
+        }
+        return keys;
     }
 
     public static void main(String[] args) {
