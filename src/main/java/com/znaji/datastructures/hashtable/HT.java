@@ -6,7 +6,12 @@ public class HT {
 
     public static class Node {
         int value;
+        String key;
         Node next;
+
+        public Node(String key, int value) {
+            this.value = value;
+        }
     }
 
     private int hashKey(String key) {
@@ -17,6 +22,21 @@ public class HT {
             hashedKey = (hashedKey + c * prime) % buckets.length;
         }
         return hashedKey;
+    }
+
+    public void set(String key, int value) {
+        int keyIndex = hashKey(key);
+        Node root = buckets[keyIndex];
+        Node newNode = new Node(key, value);
+        if (root == null) {
+            buckets[keyIndex] = newNode;
+            return;
+        }
+
+        while (root.next != null) {
+            root = root.next;
+        }
+        root.next = newNode;
     }
 
     public static void main(String[] args) {
