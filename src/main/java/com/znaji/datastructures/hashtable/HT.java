@@ -39,6 +39,16 @@ public class HT {
         root.next = newNode;
     }
 
+    public Integer get(String key) {
+        int keyIndex = hashKey(key);
+        Node node = buckets[keyIndex];
+        while (node != null) {
+            if (node.key == key) return node.value;
+            node = node.next;
+        }
+        return null;
+    }
+
     public static void main(String[] args) {
         HT ht = new HT();
         int key = ht.hashKey("tqfl,azfdazfazfest");
