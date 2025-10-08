@@ -49,9 +49,17 @@ public class ArraysLeetCodeChallenges {
         return false;
     }
 
+    public List<Integer> findDuplicates(int[] nums) {
+        HashMap<Integer, Integer> map = new HashMap<>();
+        for (int num : nums) {
+            map.merge(num, 1, Integer::sum);
+        }
+        return map.keySet().stream().filter(key -> map.get(key) == 2).toList();
+    }
+
     public static void main(String[] args) {
         ArraysLeetCodeChallenges arraysLeetCodeChallenges = new ArraysLeetCodeChallenges();
-        boolean itemInCommon = arraysLeetCodeChallenges.itemInCommon(new int[]{1,2,3,1}, new int[]{6,7});
-        System.out.println(itemInCommon);
+        var result = arraysLeetCodeChallenges.findDuplicates(new int[]{1,1,2});
+        System.out.println(result);
     }
 }
