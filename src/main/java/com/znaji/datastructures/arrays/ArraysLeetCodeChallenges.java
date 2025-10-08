@@ -1,7 +1,9 @@
 package com.znaji.datastructures.arrays;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class ArraysLeetCodeChallenges {
 
@@ -36,9 +38,20 @@ public class ArraysLeetCodeChallenges {
         }
     }
 
+    public boolean itemInCommon(int[] array1, int[] array2) {
+        Map<Integer, Boolean> map = new HashMap<>();
+        for (int num : array1) {
+            map.computeIfAbsent(num, i -> Boolean.TRUE);
+        }
+        for (int num : array2) {
+            if (map.containsKey(num) && map.get(num)) return true;
+        }
+        return false;
+    }
+
     public static void main(String[] args) {
         ArraysLeetCodeChallenges arraysLeetCodeChallenges = new ArraysLeetCodeChallenges();
-        int peakPosition = arraysLeetCodeChallenges.findPeakElement(new int[]{1,2,3,1});
-        System.out.println(peakPosition);
+        boolean itemInCommon = arraysLeetCodeChallenges.itemInCommon(new int[]{1,2,3,1}, new int[]{6,7});
+        System.out.println(itemInCommon);
     }
 }
