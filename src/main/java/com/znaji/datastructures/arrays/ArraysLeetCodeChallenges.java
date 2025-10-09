@@ -50,11 +50,16 @@ public class ArraysLeetCodeChallenges {
     }
 
     public List<Integer> findDuplicates(int[] nums) {
-        HashMap<Integer, Integer> map = new HashMap<>();
-        for (int num : nums) {
-            map.merge(num, 1, Integer::sum);
+        List<Integer> results = new ArrayList<>();
+        for (int i = 0; i < nums.length; i++) {
+            int value = Math.abs(nums[i]);
+            if (nums[value - 1] < 0) {
+                results.add(value);
+            } else {
+                nums[value - 1] *= -1;
+            }
         }
-        return map.keySet().stream().filter(key -> map.get(key) == 2).toList();
+        return results;
     }
 
     public static void main(String[] args) {
