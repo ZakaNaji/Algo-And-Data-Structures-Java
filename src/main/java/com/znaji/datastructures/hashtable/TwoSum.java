@@ -19,8 +19,22 @@ public class TwoSum {
 
     public static void main(String[] args) {
 
-        System.out.println(Arrays.toString(twoSum(new int[] {2,7,11,15}, 9)));
-        System.out.println(Arrays.toString(twoSum(new int[] {3,2,4}, 6)));
-        System.out.println(Arrays.toString(twoSum(new int[] {3,3}, 6)));
+        System.out.println(Arrays.toString(subarraySum(new int[] {2,3,4,5,1}, 9)));
+
+    }
+
+    public static int[] subarraySum(int [] nums, int target) {
+        Map<Integer, Integer> map = new HashMap<>();
+        map.put(0, -1);
+        int sum = 0;
+        for (int i = 0; i < nums.length; i++) {
+            sum = sum + nums[i];
+            int rem = sum - target;
+            if (map.containsKey(rem)) {
+                return new int[] {map.get(rem) + 1, i};
+            }
+            map.put(sum, i);
+        }
+        return new int[2];
     }
 }
