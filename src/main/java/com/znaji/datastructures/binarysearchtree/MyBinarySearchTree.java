@@ -35,6 +35,19 @@ public class MyBinarySearchTree {
         }
     }
 
+    public Node find(int value) {
+        Node temp = root;
+        while (temp != null) {
+            if (temp.value == value) return temp;
+            if (value < temp.value) {
+                temp = temp.left;
+            } else {
+                temp = temp.right;
+            }
+        }
+        return temp;
+    }
+
     public static class Node {
         int value;
         Node left;
